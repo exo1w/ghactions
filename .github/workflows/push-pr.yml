@@ -1,20 +1,31 @@
 on:
-    push:
-        branches:
-            - main
-            - "release/**"
-        paths:
-            - "src/**"
-    pull_request:
-        branches:
-            - main
-            - "release/**"
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"
+
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Checkout Code
-              uses: actions/checkout@v4.2.2
-              
-            - name: Run Test
-              run: npm test 
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
