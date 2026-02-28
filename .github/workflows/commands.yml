@@ -4,8 +4,10 @@ jobs:
   examble:
     runs-on: ubuntu-latest
     steps:
-      - run: | 
-          depricated=true
-          if [[ depricated ]]; then
-            echo "::warning:: depricated function found"
-          fi
+      - name: Set API KEY
+        run: echo "API_KEY=1234" >> $GITHUB_ENV
+          
+      - name: Use API KEY
+        run: echo "using API KEY $API_KEY"
+        
+          
