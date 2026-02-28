@@ -9,5 +9,5 @@ jobs:
       - name: Use API KEY
         run: |
           echo "::add-mask::$API_KEY"
-          echo "useing API KEY $API_KEY 
+          echo "useing API KEY $API_KEY "
        
