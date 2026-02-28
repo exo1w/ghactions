@@ -9,7 +9,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node_version: [20.x, 21.x, 22.x]
+        node_version: [23.x, 24.x, 25.x]
     runs-on: ${{ matrix.os}}
     steps:
       - uses: actions/checkout@v4
