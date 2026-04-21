@@ -12,7 +12,7 @@ else
 fi
 
 
-echo "end .....000"
+echo "end .....00000"
 
 
 
